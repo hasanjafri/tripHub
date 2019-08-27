@@ -1,6 +1,8 @@
 {
   "name": "tripHub",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "9f753e74"
 }

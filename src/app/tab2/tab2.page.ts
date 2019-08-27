@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @Component({
 	selector: 'app-tab2',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
 	styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-	constructor() {}
+	constructor(private geolocation: Geolocation) {}
+
+	getLocation() {
+		this.geolocation
+			.getCurrentPosition()
+			.then((resp) => {
+				console.log(resp.coords.latitude, resp.coords.longitude);
+			})
+			.catch((error) => {
+				console.error('Error getting location', error);
+			});
+	}
 }
