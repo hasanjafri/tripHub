@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
 	selector: 'app-poi-modal',
@@ -7,4 +8,9 @@ import { Component, Input } from '@angular/core';
 })
 export class PoiModalComponent {
 	@Input() name: string;
+	@Input() modalController: ModalController;
+
+	dismiss() {
+		this.modalController.dismiss();
+	}
 }

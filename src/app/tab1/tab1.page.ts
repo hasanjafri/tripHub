@@ -22,7 +22,7 @@ export class Tab1Page {
 	async presentModal(name) {
 		const modal = await this.modalController.create({
 			component: PoiModalComponent,
-			componentProps: { name: name }
+			componentProps: { name: name, modalController: this.modalController }
 		});
 		return await modal.present();
 	}
