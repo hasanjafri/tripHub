@@ -6,3 +6,39 @@
 		<ion-icon name="close-circle" size="large" slot="end" (click)="dismiss()"></ion-icon>
 	</ion-toolbar>
 </ion-header>
+
+<ion-content fullscreen>
+	<ion-card>
+		<ion-item>
+			<h2>{{ name }}</h2>
+			<p>Last Updated September 8, 2019</p>
+		</ion-item>
+
+		<img src="../../../../assets/avatar-casino.jpg" />
+
+		<ion-card-content>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+			ever since the 1500s.
+		</ion-card-content>
+
+		<ion-row>
+			<ion-col>
+				<button ion-button icon-left clear small>
+					<ion-icon name="thumbs-up"></ion-icon>
+					<div>12 Likes</div>
+				</button>
+			</ion-col>
+			<ion-col>
+				<button ion-button icon-left clear small>
+					<ion-icon name="text"></ion-icon>
+					<div>4 Comments</div>
+				</button>
+			</ion-col>
+			<ion-col center text-center>
+				<ion-note>
+					11h ago
+				</ion-note>
+			</ion-col>
+		</ion-row>
+	</ion-card>
+</ion-content>
