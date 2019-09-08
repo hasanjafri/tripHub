@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { PoiModalComponent } from '../components/poi-modal/poi-modal.component';
 
 @Component({
 	selector: 'app-tab1',
@@ -14,4 +16,14 @@ export class Tab1Page {
 		[{ name: 'Nature & Outdoor Sites', imgUrl: '../../assets/avatar-park.jpg' }, { name: 'Test1', imgUrl: '' }],
 		[{ name: 'Test2', imgUrl: '' }, { name: 'Test3', imgUrl: '' }]
 	];
+
+	constructor(public modalController: ModalController) {}
+
+	async presentModal(name) {
+		const modal = await this.modalController.create({
+			component: PoiModalComponent,
+			componentProps: { name: name }
+		});
+		return await modal.present();
+	}
 }
