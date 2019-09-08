@@ -35,7 +35,7 @@ export class Tab3Page implements OnInit {
 			const existingPrefValue = await this.storage.get(this.preferencesList[i].title);
 			if (existingPrefValue) {
 				this.preferencesList[i].checked = existingPrefValue;
-			} else if (existingPrefValue !== false) {
+			} else if (existingPrefValue === null) {
 				this.storage.set(this.preferencesList[i].title, this.preferencesList[i].checked);
 			}
 		}
