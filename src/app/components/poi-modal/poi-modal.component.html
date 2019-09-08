@@ -1,11 +1,4 @@
-<ion-header>
-	<ion-toolbar>
-		<ion-title>
-			{{ name }}
-		</ion-title>
-		<ion-icon name="close-circle" size="large" slot="end" (click)="dismiss()"></ion-icon>
-	</ion-toolbar>
-</ion-header>
+<app-modal-header [title]="name" (closeEmitter)="dismiss()"></app-modal-header>
 
 <ion-content fullscreen>
 	<ion-card>
