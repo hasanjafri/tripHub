@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
 	styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-	constructor() {}
+	categories = [
+		[
+			{ name: 'Digital Entertainment', imgUrl: '../../assets/avatar-vg.jpg' },
+			{ name: 'Gambling', imgUrl: '../../assets/avatar-casino.jpg' }
+		],
+		[{ name: 'Nature & Outdoor Sites', imgUrl: '../../assets/avatar-park.jpg' }, { name: 'Test1', imgUrl: '' }],
+		[{ name: 'Test2', imgUrl: '' }, { name: 'Test3', imgUrl: '' }]
+	];
 }

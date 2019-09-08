@@ -7,7 +7,16 @@
 </ion-header>
 
 <ion-content>
-	<ion-text color="dark">
-		<h5>The quick brown fox jumps over the lazy dog</h5>
-	</ion-text>
+	<ion-grid>
+		<ion-row *ngFor="let category of categories">
+			<ion-col>
+				<ion-img class="browse-item" [src]="category[0].imgUrl"></ion-img>
+				<span>{{ category[0].name }}</span>
+			</ion-col>
+			<ion-col>
+				<ion-img class="browse-item" [src]="category[1].imgUrl"></ion-img>
+				<span>{{ category[1].name }}</span>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 </ion-content>
