@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { ToastController, Platform } from '@ionic/angular';
-import { GoogleMaps, GoogleMap, GoogleMapsEvent, Marker, GoogleMapsAnimation, MyLocation } from '@ionic-native/google-maps';
+import { GoogleMap, GoogleMaps, GoogleMapsAnimation, GoogleMapsEvent, Marker, MyLocation } from '@ionic-native/google-maps';
+import { Platform, ToastController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
 	selector: 'app-tab2',
@@ -11,12 +12,23 @@ import { GoogleMaps, GoogleMap, GoogleMapsEvent, Marker, GoogleMapsAnimation, My
 export class Tab2Page implements OnInit {
 	map: GoogleMap;
 	address: string;
+	preferences = new Object();
 
-	constructor(private geolocation: Geolocation, public toastCtrl: ToastController, private platform: Platform) {}
+	constructor(private geolocation: Geolocation, public toastCtrl: ToastController, private platform: Platform, private storage: Storage) {}
 
 	ngOnInit() {
 		this.platform.ready();
 		this.loadMap();
+	}
+
+	ionViewWillEnter() {
+		this.storage
+			.forEach((val, key) => {
+				this.preferences[key] = val;
+			})
+			.finally(() => {
+				console.log(this.preferences);
+			});
 	}
 
 	loadMap() {

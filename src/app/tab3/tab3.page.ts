@@ -31,12 +31,12 @@ export class Tab3Page implements OnInit {
 	constructor(private storage: Storage) {}
 
 	async ngOnInit() {
-		for (let i: number; i < this.preferencesList.length; i++) {
-			const existingPrefValue = await this.storage.get(this.preferencesList[i].title);
+		for (const preference of this.preferencesList) {
+			const existingPrefValue = await this.storage.get(preference.title);
 			if (existingPrefValue) {
-				this.preferencesList[i].checked = existingPrefValue;
+				preference.checked = existingPrefValue;
 			} else if (existingPrefValue === null) {
-				this.storage.set(this.preferencesList[i].title, this.preferencesList[i].checked);
+				this.storage.set(preference.title, preference.checked);
 			}
 		}
 	}
