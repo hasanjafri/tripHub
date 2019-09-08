@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { PoiModalComponent } from '../components/poi-modal/poi-modal.component';
+import { PoiListModalComponent } from '../components/poi-list-modal/poi-list-modal.component';
 
 @Component({
 	selector: 'app-tab1',
@@ -21,7 +21,7 @@ export class Tab1Page {
 
 	async presentModal(name) {
 		const modal = await this.modalController.create({
-			component: PoiModalComponent,
+			component: PoiListModalComponent,
 			componentProps: { name: name, modalController: this.modalController }
 		});
 		return await modal.present();

@@ -8,11 +8,12 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PoiListModalComponent } from './components/poi-list-modal/poi-list-modal.component';
 import { PoiModalComponent } from './components/poi-modal/poi-modal.component';
 
 @NgModule({
-	declarations: [AppComponent, PoiModalComponent],
-	entryComponents: [PoiModalComponent],
+	declarations: [AppComponent, PoiModalComponent, PoiListModalComponent],
+	entryComponents: [PoiModalComponent, PoiListModalComponent],
 	imports: [
 		BrowserModule,
 		IonicModule.forRoot(),
